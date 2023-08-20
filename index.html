@@ -16,6 +16,7 @@
   <style>
     * {
       font-family: "Work Sans", sans-serif;
+
     }
 
 
@@ -158,7 +159,7 @@
                     <h3> Total: <span class="text-[#11111180]" id="total">00.00<span>TK</span></span></h3>
                   </div>
                   <hr class="w-[240px] mt-4 bg-[#11111126]" />
-                  <button id="Purchase-btn"
+                  <button id="Purchase-btn" onclick="my_modal_1.showModal()"
                     class="btn btn-disabled btn-sm lg:btn-md btn-secondary w-full rounded-lg mt-4 bg-[#E527B2] text-white lg:text-xl font-semibold">
                     Make Purchase
                   </button>
@@ -242,6 +243,37 @@
       </section>
       <!-- sportswear end  -->
     </div>
+    <!-- modal  -->
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="my_modal_1" class="modal">
+      <form method="dialog" class="modal-box w-2/5 max-w-5xl">
+        <div class="flex  justify-center">
+          <div>
+
+            <div class="h-[150px] flex justify-center">
+
+              <img src="images/congo.png" alt="" class="h-full">
+            </div>
+            <h2 class="text-[#111] text-2xl font-bold text-center">
+              Congratulations
+            </h2>
+
+            <p class="py-4 text-xl text-[#11111180] font-normal text-center">Your Purchase the product</p>
+          </div>
+        </div>
+        <div class="modal-action">
+          <!-- if there is a button in form, it will close the modal -->
+
+          <button
+            class="btn-sm lg:btn-md btn-secondary mx-auto w-44 rounded-lg  bg-[#E527B2] text-white lg:text-xl font-semibold">
+            Go Home
+          </button>
+
+        </div>
+      </form>
+    </dialog>
+    <!-- modal  -->
   </main>
   <script src="js/app.js"></script>
 </body>
