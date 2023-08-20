@@ -4,6 +4,8 @@ const total = document.getElementById("total");
 const purchaseBtn = document.getElementById("Purchase-btn");
 const coponBtn = document.getElementById("copon-btn");
 const promo = document.getElementById("promo");
+const myListOl = document.getElementById("my-item");
+
 const myDiscount = 20;
 let myDiscountPrice = 0;
 function stringtoNumber(num) {
@@ -14,7 +16,7 @@ let myTotalPrice = 0;
 
 function handleClick(target) {
   const itemName = target.childNodes[3].childNodes[5].innerText;
-  const myListOl = document.getElementById("my-item");
+  // const myListOl = document.getElementById("my-item");
 
   const newItem = document.createElement("li");
   newItem.textContent = itemName;
@@ -44,4 +46,17 @@ coponBtn.addEventListener("click", function () {
     discount.textContent = myDiscountPrice.toFixed(2);
     total.textContent = (totalPriceForCoponString - myDiscountPrice).toFixed(2);
   }
+});
+
+const reSetAll = document.getElementById("reset-all");
+reSetAll.addEventListener("click", function () {
+  myTotalPrice = 0;
+  myDiscountPrice = 0;
+  totalPrice.textContent = "0.00";
+  discount.textContent = "0.00";
+  total.textContent = "0.00";
+  promo.value = "";
+  purchaseBtn.classList.add("btn-disabled");
+  coponBtn.classList.add("btn-disabled");
+  myListOl.innerHTML = "";
 });
