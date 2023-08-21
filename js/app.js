@@ -36,6 +36,7 @@ function handleClick(target) {
     coponBtn.classList.remove("btn-disabled");
   }
 }
+
 coponBtn.addEventListener("click", function () {
   const totalPriceForCoponString = totalPrice.textContent;
   const totalPriceForCoponNumber = parseFloat(totalPriceForCoponString);
@@ -45,6 +46,7 @@ coponBtn.addEventListener("click", function () {
     myDiscountPrice = (myDiscount / 100) * totalPriceForCoponNumber;
     discount.textContent = myDiscountPrice.toFixed(2);
     total.textContent = (totalPriceForCoponString - myDiscountPrice).toFixed(2);
+    promo.value = "";
   }
 });
 
